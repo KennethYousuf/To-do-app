@@ -7,7 +7,8 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("todo"),
+          backgroundColor: Colors.black,
+          title: Text("To-do"),
         ),
         body: ListView(
           children: [
@@ -25,7 +26,7 @@ class Home extends StatelessWidget {
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.add_outlined),
           mini: true,
-          backgroundColor: Colors.blue,
+          backgroundColor: Colors.black,
           onPressed: () {
             showDialog(
                 context: context,
@@ -34,6 +35,8 @@ class Home extends StatelessWidget {
                       title: Text("Add Todo"),
                       actions: [
                         ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.black),
                             onPressed: () {
                               //add function here with firebase later
                               Navigator.pop(context);
