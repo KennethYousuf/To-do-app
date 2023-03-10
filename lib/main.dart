@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/home.dart';
+import 'package:notes_app/pages/add_todo.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Hey',
+      debugShowCheckedModeBanner: false,
       home: Home(),
     );
   }
