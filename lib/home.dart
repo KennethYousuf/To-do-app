@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/pages/add_todo.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});

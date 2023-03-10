@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/home.dart';
-import 'package:notes_app/pages/add_todo.dart';
 
 void main() {
   runApp(const MyApp());
