@@ -15,15 +15,20 @@ class _SplashState extends State<Splash> {
   void initState() {
     super.initState();
     Timer(
-        Duration(seconds: 3),
+        Duration(seconds: 4),
         () => Navigator.pushReplacement(
             context, MaterialPageRoute(builder: (context) => Home())));
   }
 
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      child: Text("ToDo"),
+    return Center(
+      child: Text(
+        "ToDo",
+        style: TextStyle(
+          fontSize: 32,
+          color: Colors.white,
+        ),
+      ),
     );
   }
 }
