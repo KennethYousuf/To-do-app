@@ -9,9 +9,10 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Firebase.initializeApp();
 
-  FirebaseFirestore _firestore = FirebaseFirestore.instance;
-  Map<String, dynamic> newtask = {"task": "Do H.W"};
-  await _firestore.collection("tasks").doc("2").set(newtask);
+  // FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  // Map<String, dynamic> newtask = {"task": "Do H.W"};
+  // await _firestore.collection("tasks").doc("2").set(newtask);
+  // print("New task added");
 
   //for fetching whole collection of data
   //and for specific data Query will be replaced by Document

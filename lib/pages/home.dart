@@ -1,7 +1,26 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({super.key});
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  TextEditingController taskController = TextEditingController();
+
+  void saveTask() {
+    String task = taskController.text.trim();
+
+    if (task != "") {
+      Map<String, dynamic> userTasks = {"task": task};
+      FirebaseFirestore.instance.collection("task").add(userTasks);
+    } else {
+      print("Please fill task");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,11 +58,13 @@ class Home extends StatelessWidget {
                                 backgroundColor: Colors.black),
                             onPressed: () {
                               //add function here with firebase later
+                              saveTask();
                               Navigator.pop(context);
                             },
                             child: Text("Add"))
                       ],
                       content: TextField(
+                        controller: taskController,
                         decoration: InputDecoration(hintText: "Enter here"),
                       ),
                     ));

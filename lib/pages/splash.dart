@@ -26,7 +26,7 @@ class _SplashState extends State<Splash> {
         "ToDo",
         style: TextStyle(
           fontSize: 32,
-          color: Colors.white,
+          color: Colors.grey,
         ),
       ),
     );
