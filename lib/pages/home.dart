@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -9,18 +10,19 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  List _todos =  [];
   TextEditingController taskController = TextEditingController();
 
-  void saveTask() {
-    String task = taskController.text.trim();
+  // void saveTask() {
+  //   String task = taskController.text.trim();
 
-    if (task != "") {
-      Map<String, dynamic> userTasks = {"task": task};
-      FirebaseFirestore.instance.collection("task").add(userTasks);
-    } else {
-      print("Please fill task");
-    }
-  }
+  //   if (task != "") {
+  //     Map<String, dynamic> userTasks = {"task": task};
+  //     FirebaseFirestore.instance.collection("task").add(userTasks);
+  //   } else {
+  //     print("Please fill task");
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -53,12 +55,12 @@ class _HomeState extends State<Home> {
                       backgroundColor: Colors.grey,
                       title: Text("Add Todo"),
                       actions: [
-                        ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.black),
+                        CupertinoButton(
+                            color: Colors.black,
                             onPressed: () {
                               //add function here with firebase later
-                              saveTask();
+                              // saveTask();
+                              setState(() {});
                               Navigator.pop(context);
                             },
                             child: Text("Add"))
